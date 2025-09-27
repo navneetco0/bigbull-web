@@ -97,7 +97,7 @@ const About: React.FC = () => {
         </div>
         <div className="absolute top-0 pb-6 left-0 w-full h-[172vh] z-[2] flex justify-center items-center">
           <Image
-            src={"/images/home/ellipse.svg"}
+            src={"/images/home/Ellipse.svg"}
             alt="background image 1"
             fill
             className="object-cover"

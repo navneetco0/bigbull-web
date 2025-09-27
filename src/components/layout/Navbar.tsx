@@ -5,6 +5,34 @@ import Image from "next/image";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css";
+import EventsCarousel from "../ui/EventCarousel";
+
+const events = [
+  {
+    id: 1,
+    artistName: "futur",
+    date: "22nd aug, 2025",
+    image: "/images/temp/event-artist-1.png",
+  },
+  {
+    id: 2,
+    artistName: "TEJMUSIC VODKA",
+    date: "4TH JUL, 2025",
+    image: "/images/temp/event-artist-2.png",
+  },
+  {
+    id: 3,
+    artistName: "futur",
+    date: "26th JUN, 2025",
+    image: "/images/temp/event-artist-3.png",
+  },
+  {
+    id: 4,
+    artistName: "FLOYD LAVINE KAYVEE",
+    date: "22nd May, 2025",
+    image: "/images/temp/event-artist-4.png",
+  },
+];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -23,7 +51,7 @@ const Navbar = () => {
           w-full sm:max-w-[754px] h-full
           flex flex-col
           rounded-[44px]
-          px-[24px] sm:px-[32px] py-[16px]
+          py-[16px]
           transition-transform duration-150 ease-in-out
         "
         style={{
@@ -33,7 +61,7 @@ const Navbar = () => {
             "linear-gradient(152.4deg, rgba(255, 255, 255, 0.12) 15.6%, rgba(255, 255, 255, 0.06) 81.6%)",
         }}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center px-[24px] sm:px-[32px]">
           <Link href={"/"}>
             <div className="relative w-[61.33] h-[32] sm:w-[103.5] sm:h-[54]">
               <Image
@@ -90,8 +118,14 @@ const Navbar = () => {
                 <h4>All Events</h4>
                 <h4>About us</h4>
               </div>
-              <div>   
-                {/* //Todo Event Card */}
+              <div className="w-full">
+                <EventsCarousel
+                  events={events}
+                  cardWidthMobile={240.88}
+                  cardWidthDesktop={273}
+                  gap={16.22}
+                  interval={3000}
+                />
               </div>
               <p
                 style={{ fontFamily: "TT-Supermolot-Neue-Trial-Extended" }}
